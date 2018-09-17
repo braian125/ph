@@ -5,35 +5,30 @@
  */
 package ph;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Brian Vanegas
  */
 public class Cuenta {
-    private int id;
+    private String codigo;
     private String nombres;
-    private String apellidos;
+    private String tipoCuenta;
+    private ArrayList<Cobros> cobros = new ArrayList<Cobros>();
 
-    public Cuenta(int id, String nombres, String apellidos) {
-        this.id = id;
+    public Cuenta(String codigo, String nombres, String tipoCuenta) {
+        this.codigo = codigo;
         this.nombres = nombres;
-        this.apellidos = apellidos;
+        this.tipoCuenta = tipoCuenta;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getNombres() {
@@ -44,5 +39,25 @@ public class Cuenta {
         this.nombres = nombres;
     }
     
+    public void addCobro(double pValor, String pTipoCobro) {
+        Cobros cobro = new Cobros(pValor, pTipoCobro);
+        cobros.add(cobro);
+    }
+    
+    public double getCobros() {
+        double vlrCobros = 0;
+        for (Cobros j: cobros) {
+            vlrCobros +=j.getValor();
+        }
+        return vlrCobros;
+    }
+
+    public String getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public void setTipoCuenta(String tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
+    }
     
 }

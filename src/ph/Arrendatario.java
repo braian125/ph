@@ -9,6 +9,10 @@ package ph;
  *
  * @author Brian Vanegas
  */
-public class Arrendatario {
+public class Arrendatario extends Cuenta{
+    
+    public Arrendatario(int id, String nombres, String apellidos) {
+        super(id, nombres, apellidos);
+    }
     
 }

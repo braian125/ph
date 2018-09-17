@@ -9,6 +9,10 @@ package ph;
  *
  * @author Brian Vanegas
  */
-public class Propietario {
+public class Propietario extends Cuenta {
+    
+    public Propietario(String id, String nombres, String tipoCuenta) {
+        super(id, nombres, tipoCuenta);
+    }
     
 }

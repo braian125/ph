@@ -10,14 +10,42 @@ package ph;
  * @author Brian Vanegas
  */
 public class Inmueble {
-    private int id;
+    private String id;
+    private String descripcion;
     private String tipo_inmueble;
     private double metroCuadrado;
+    private double vrMetroCuadrado;
 
-    public Inmueble(int id, String tipo_inmueble, double metroCuadrado) {
+    public Inmueble(String id, String descripcion, String tipo_inmueble, double metroCuadrado, double vrMetroCuadrado) {
         this.id = id;
+        this.descripcion = descripcion;
         this.tipo_inmueble = tipo_inmueble;
         this.metroCuadrado = metroCuadrado;
+        this.vrMetroCuadrado = vrMetroCuadrado;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getTipo_inmueble() {
+        return tipo_inmueble;
+    }
+
+    public void setTipo_inmueble(String tipo_inmueble) {
+        this.tipo_inmueble = tipo_inmueble;
     }
 
     public double getMetroCuadrado() {
@@ -28,21 +56,15 @@ public class Inmueble {
         this.metroCuadrado = metroCuadrado;
     }
 
-    public int getId() {
-        return id;
+    public double getVrMetroCuadrado() {
+        return vrMetroCuadrado;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTipo_inmueble() {
-        return tipo_inmueble;
-    }
-
-    public void setTipo_inmueble(String tipo_inmueble) {
-        this.tipo_inmueble = tipo_inmueble;
+    public void setVrMetroCuadrado(double vrMetroCuadrado) {
+        this.vrMetroCuadrado = vrMetroCuadrado;
     }
     
-    
+    public double getValorAdministracion() {
+        return this.metroCuadrado * vrMetroCuadrado;
+    }
 }
